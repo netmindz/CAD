@@ -1,7 +1,7 @@
 
-enclosure_inner_length = 130;
-enclosure_inner_width = 130;
-enclosure_inner_depth = 60;
+enclosure_inner_length = 110;
+enclosure_inner_width = 110;
+enclosure_inner_depth = 50;
 
 enclosure_thickness = 2;
 
@@ -160,10 +160,9 @@ module box2(in_x, in_y, in_z, shell, top_lip, top_thickness) {
 	difference() {
 		sides(in_x, in_y, in_z, shell);
 		screws(in_x, in_y, in_z, shell);
-		hole("length_1", 11.8, [40, 40]);
+		hole("length_1", 12, [37, 37]);
 		//hole("length_1", 4, [-8, 10]);
-        //transform(0,0);
-        //cube([10,10,10]);
+        translate([0,-50,0]) cube([60,35,18]);
         
         punch_square([10,10,10], [0,0,0], [0,0]);
 	}
